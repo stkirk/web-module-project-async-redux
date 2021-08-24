@@ -10,9 +10,14 @@ export const getCreature = () => (dispatch) => {
   axios
     .get("https://botw-compendium.herokuapp.com/api/v2/category/creatures")
     .then((res) => {
-      console.log("API Response", res.data);
+      console.log("API Response", res.data.data);
+      dispatch({
+        type: SUCCESS_FETCHING_CREATURE,
+        payload: res.data.data.non_food,
+      });
     })
     .catch((err) => {
       console.log("ERROR", err);
+      dispatch({ type: FAIL_FETCHING_CREATURE, payload: err });
     });
 };

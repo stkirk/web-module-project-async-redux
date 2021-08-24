@@ -21,7 +21,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        creature: action.payload,
+        creature: action.payload[Math.floor(Math.random() * 48)],
       };
     case FAIL_FETCHING_CREATURE:
       return {
