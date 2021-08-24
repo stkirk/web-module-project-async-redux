@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.App {
+  text-align: center;
+  margin: 15px auto;
+  width: 80%;
+}
