@@ -1,14 +1,28 @@
 import "./App.css";
 import CreatureCard from "./components/CreatureCard";
 
-function App() {
+import { connect } from "react-redux";
+
+import { getCreature } from "./actions";
+
+function App(props) {
   return (
     <div className="App">
       <h1>Legend of Zelda: Breath of the Wild</h1>
-      <button>Random Creature</button>
+      <button onClick={props.getCreature}>Random Creature</button>
       <CreatureCard />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCreature: () => dispatch(getCreature()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
