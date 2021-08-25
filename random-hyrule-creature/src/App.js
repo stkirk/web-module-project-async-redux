@@ -10,13 +10,16 @@ function App(props) {
     <div className="App">
       <h1>Legend of Zelda: Breath of the Wild</h1>
       <button onClick={props.getCreature}>Random Creature</button>
-      <CreatureCard />
+      {props.loading && <h2>Loading...</h2>}
+      {props.creature ? <CreatureCard /> : <p>Click for Hyrule creature</p>}
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    creature: state.creature,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

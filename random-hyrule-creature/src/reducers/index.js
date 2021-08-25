@@ -5,7 +5,7 @@ import {
 } from "../actions";
 
 const initialState = {
-  creature: {},
+  creature: false,
   loading: false,
   error: "",
 };

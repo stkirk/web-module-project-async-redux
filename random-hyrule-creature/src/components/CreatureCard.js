@@ -1,11 +1,20 @@
 import React from "react";
+import { connect } from "react-redux";
 
 const CreatureCard = (props) => {
   return (
     <div className="creature-div">
-      <h3>Creature Info</h3>
+      <img src={props.creature.image} alt="random creature" />
+      <h3>{props.creature.name} Info</h3>
+      <p>{props.creature.description}</p>
     </div>
   );
 };
 
-export default CreatureCard;
+const mapStateToProps = (state) => {
+  return {
+    creature: state.creature,
+  };
+};
+
+export default connect(mapStateToProps, {})(CreatureCard);
