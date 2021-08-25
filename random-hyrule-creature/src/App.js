@@ -12,6 +12,7 @@ function App(props) {
       <button onClick={props.getCreature}>Random Creature</button>
       {props.loading && <h2>Loading...</h2>}
       {props.creature ? <CreatureCard /> : <p>Click for Hyrule creature</p>}
+      <p>{props.error}</p>
     </div>
   );
 }
@@ -19,6 +20,7 @@ function App(props) {
 const mapStateToProps = (state) => {
   return {
     creature: state.creature,
+    error: state.error,
   };
 };
 

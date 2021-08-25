@@ -13,8 +13,13 @@ body {
 }
 
 .creature-div {
-  border: 1px solid grey;
-  padding: 2%;
+  border: 2px solid grey;
+  padding: 5%;
   border-radius: 10px;
   margin-top: 25px;
+}
+
+img {
+  border: 2px solid grey;
+  border-radius: 7px;
 }
